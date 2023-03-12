@@ -1,0 +1,18 @@
+﻿@page "/"
+@using Yubico.YubiKey;
+
+<h1>Hello, world!</h1>
+
+Welcome to your new app.
+
+<SurveyPrompt Title="How is Blazor working for you?" />
+
+@code
+{
+    protected override void OnInitialized()
+    {
+        IYubiKeyDevice yubiKey = YubiKeyDevice.FindAll().FirstOrDefault();
+        base.OnInitialized();
+    }
+
+}
